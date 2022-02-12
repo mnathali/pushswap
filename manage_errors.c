@@ -34,7 +34,7 @@ short	args_control(int argc, char const *argv[])
 		while (argv[argc][i] != '\0')
 		{
 			if ((!ft_isdigit(argv[argc][i]) && argv[argc][i] != ' ')
-			&& ((argv[argc][i] == '-' || argv[argc][i] == '+')
+			|| ((argv[argc][i] == '-' || argv[argc][i] == '+')
 			&& !ft_isdigit(argv[argc][i + 1])))
 			{
 				ft_putstr_fd("Error\n", 1);

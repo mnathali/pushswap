@@ -1,23 +1,5 @@
 #include "push_swap.h"
 
-int ft_criteria(t_list *stack)
-{
-    int n;
-    t_list *lst;
-
-    lst = stack;
-    n = 0;
-    while (lst && lst->next != 0)
-    {
-        if (*(int *)(lst->next)->content >= *(int *)lst->content)
-            n++;
-        else
-            n--;
-        lst = lst->next;
-    }
-    return (n);
-}
-
 void complex_sort_b(t_list **s, int (*f)(t_list *, char *), int (*f_2)(t_list *))
 {
     if (f(*s, "s_rr") < f_2(*s) && f(*s, "s_rr") < f(*s, "r_s")
@@ -72,12 +54,12 @@ void complex_sort(t_list **s, int (*f)(t_list *, char *), int (*f_2)(t_list *))
         rra(s);
 }
 
-void   	ft_sorting(t_list **stack_a, t_list **stack_b)
+void   	ft_sorting(t_list **stack_a)
 {
 	int	size;
 
 	size = ft_lstsize(*stack_a);
-	if (ft_criteria(*stack_a) == size - 1 && *stack_b == 0)
+	if (ft_criteria(*stack_a) == size - 1)
 		return ;
 	recoursion(stack_a, size);
 	while (*(int *)(*stack_a)->content != min_value(*stack_a))

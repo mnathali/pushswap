@@ -18,7 +18,7 @@ void		ra(t_list **stack_a);
 short		args_control(int argc, char const *argv[]);
 short		check_args(t_list *stack);
 t_list		*create_stack(int argc, char const *argv[], t_list *stack_a);
-void		ft_sorting(t_list **stack_a, t_list **stack_b);
+void		ft_sorting(t_list **stack_a);
 int			mediana(t_list *stack);
 int			path_to_number(t_list *stack, char index, int med);
 long long	ft_atoi_long(const char *str);
