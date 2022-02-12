@@ -38,7 +38,7 @@ FLAGS = -Wall -Wextra -Werror
 
 CC = cc
 
-all: $(NAME) $(LIB)
+all: $(LIB) $(NAME)
 
 %.o : %.c
 	$(CC) $(FLAGS) -c $< 
@@ -61,9 +61,9 @@ fclean: clean
 
 re: fclean all
 
-bonus: $(BON_NAME)
+bonus: $(LIB) $(BON_NAME)
 
-$(BON_SRC): $(BON_HEADER) $(LIB)
+$(BON_SRC): $(BON_HEADER)
 
 $(BON_NAME): $(BON_OBJ) $(LIB)
 	$(CC) $(FLAGS) $(BON_OBJ) $(LIB) -o $@
