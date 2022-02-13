@@ -30,6 +30,8 @@ BON_SRC = create_stack.c ft_criteria.c manage_errors.c\
 	checker.c get_next_line.c\
 	ra_rb_rr.c rra_rrb_rrr.c sa_sb_ss_pa_pb.c
 
+HEADER_DEP = checker.c get_next_line.c
+
 LIB_SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c\
 	ft_strlen.c ft_memset.c ft_bzero.c ft_memcpy.c ft_memmove.c ft_strlcpy.c\
 	ft_strlcat.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c\
@@ -53,7 +55,7 @@ all: $(LIB) $(NAME)
 %.o : %.c
 	$(CC) $(FLAGS) -c $< 
 
-$(SRC): $(HEADER)
+$(OBJSRC): $(HEADER)
 
 $(LIB): $(patsubst ft_%.c, libft/ft_%.c, $(LIB_SRC)) libft/libft.h
 	cd libft && $(MAKE)
@@ -73,7 +75,9 @@ re: fclean all
 
 bonus: $(LIB) $(BON_NAME)
 
-$(BON_SRC): $(BON_HEADER)
+$(patsubst %.c, %.o, checker.c): $(HEADER)
+
+$(patsubst %.c, %.o, $(HEADER_DEP)): $(BON_HEADER)
 
 $(BON_NAME): $(BON_OBJ) $(LIB)
 	$(CC) $(FLAGS) $(BON_OBJ) $(LIB) -o $@

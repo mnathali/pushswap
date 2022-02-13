@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "checker.h"
 
 int	ft_criteria(t_list *stack)
 {
