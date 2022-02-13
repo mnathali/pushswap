@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   evaluations.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnathali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/13 14:46:41 by mnathali          #+#    #+#             */
+/*   Updated: 2022/02/13 14:46:43 by mnathali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void	double_action(t_list **stack_a, void (*f_1)(t_list **), void (*f_2)(t_list **))
+void	double_action(t_list **s, void (*f1)(t_list **), void (*f2)(t_list **))
 {
-	f_1(stack_a);
-	f_2(stack_a);
+	f1(s);
+	f2(s);
 }
 
-int evaluate_sw(t_list *stack)
+int	evaluate_sw(t_list *stack)
 {
 	int		n;
 	t_list	*lst;

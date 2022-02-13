@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   manage_errors.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnathali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/13 15:00:51 by mnathali          #+#    #+#             */
+/*   Updated: 2022/02/13 15:00:53 by mnathali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static short	lenght_of_arg(char const *str)
@@ -21,7 +33,7 @@ static short	lenght_of_arg(char const *str)
 
 short	args_control(int argc, char const *argv[])
 {
-    int	i;
+	int	i;
 
 	while (argc > 0)
 	{
@@ -29,11 +41,12 @@ short	args_control(int argc, char const *argv[])
 		if (!lenght_of_arg(argv[argc]))
 		{
 			ft_putstr_fd("Error\n", 1);
-				return (0);
+			return (0);
 		}
 		while (argv[argc][i] != '\0')
 		{
-			if ((!ft_isdigit(argv[argc][i]) && argv[argc][i] != ' ')
+			if ((!ft_isdigit(argv[argc][i]) && argv[argc][i] != ' '
+			&& argv[argc][i] != '-' && argv[argc][i] != '+')
 			|| ((argv[argc][i] == '-' || argv[argc][i] == '+')
 			&& !ft_isdigit(argv[argc][i + 1])))
 			{
@@ -57,7 +70,7 @@ short	check_args(t_list *stack)
 		while (lst)
 		{
 			if (*(long long *)lst->content > INT_MAX
-			|| *(long long *)lst->content < INT_MIN)
+				|| *(long long *)lst->content < INT_MIN)
 			{
 				ft_putstr_fd("Error\n", 1);
 				return (0);

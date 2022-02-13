@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   checker.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnathali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/13 14:41:38 by mnathali          #+#    #+#             */
+/*   Updated: 2022/02/13 14:41:40 by mnathali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 #include "push_swap.h"
 
@@ -43,7 +55,7 @@ short	make_action(t_list **stack_a, t_list **stack_b, char *str)
 
 void	checker(t_list **stack_a, t_list **stack_b)
 {
-    char	*str;
+	char	*str;
 
 	str = get_next_line(0);
 	while (str)
@@ -69,7 +81,7 @@ void	checker(t_list **stack_a, t_list **stack_b)
 int	main(int argc, char const *argv[])
 {
 	t_list	*stack_a;
-    t_list	*stack_b;
+	t_list	*stack_b;
 
 	stack_a = 0;
 	stack_b = 0;

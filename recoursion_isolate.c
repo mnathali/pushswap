@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   recoursion_isolate.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnathali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/13 15:06:24 by mnathali          #+#    #+#             */
+/*   Updated: 2022/02/13 15:06:26 by mnathali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	positive_pass(t_list **stack_d, t_list **stack, int n, int med)
@@ -43,20 +55,20 @@ int	negative_pass(t_list **stack_d, t_list **stack, int n, int med)
 	return (n);
 }
 
-void recoursion_isolate(t_list **stack_d, t_list **stack_a, short sign)
+void	recoursion_isolate(t_list **stack_d, t_list **stack_a, short sign)
 {
-    t_list *stack;
-    int med;
-    int n;
+	t_list	*stack;
+	int		med;
+	int		n;
 
-    stack = 0;
-    n = sign * ft_lstsize(*stack_d);
-    med = mediana(*stack_d);
-    if (n > 0)
+	stack = 0;
+	n = sign * ft_lstsize(*stack_d);
+	med = mediana(*stack_d);
+	if (n > 0)
 		n = positive_pass(stack_d, &stack, n, med);
-    if (n < 0)
+	if (n < 0)
 		n = negative_pass(stack_d, &stack, n, med);
-    if (*stack_d)
+	if (*stack_d)
 		recoursion_isolate(stack_d, stack_a, -1 * sign);
 	if (ft_lstsize(stack) > 20)
 	{

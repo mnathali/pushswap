@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   calculations.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnathali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/13 14:39:55 by mnathali          #+#    #+#             */
+/*   Updated: 2022/02/13 14:39:58 by mnathali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	min_value(t_list *stack)
@@ -78,13 +90,13 @@ int	path_to_number(t_list *stack, char index, int med)
 
 int	nearer(t_list *stack, int med)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	while (*(int *)stack->content < med)
-		{
-			n++;
-			stack = stack->next;
-		}
-	return(n);
+	{
+		n++;
+		stack = stack->next;
+	}
+	return (n);
 }

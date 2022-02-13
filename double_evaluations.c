@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   double_evaluations.c                               :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mnathali <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/13 14:44:39 by mnathali          #+#    #+#             */
+/*   Updated: 2022/02/13 14:44:40 by mnathali         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	evaluate_r_s(t_list *stack)
@@ -16,7 +28,7 @@ int	evaluate_r_s(t_list *stack)
 	else
 		n--;
 	if (((lst->next)->next)->next
-	&& *(int *)lst->next->next->next->content > *(int *)lst->next->content)
+		&& *(int *)lst->next->next->next->content > *(int *)lst->next->content)
 		n++;
 	else
 		n--;
@@ -29,7 +41,7 @@ int	evaluate_r_s(t_list *stack)
 	return (n);
 }
 
-int evaluate_s_r(t_list *stack)
+int	evaluate_s_r(t_list *stack)
 {
 	int		n;
 	t_list	*lst;
