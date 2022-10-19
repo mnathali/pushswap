@@ -41,5 +41,5 @@ So it is needed redirect stdout of push_swap to stdin of checker using pipe ("|"
 
 As push_swap is started it creates forward list to contain these integers.
 First mediana of stack is calculated and next if integer is less than the mediana it pushed to the second stack.
-While doing on repeat as a cycle we will have gotten partly sorted stack B. Then we can return them back and sort stack A doing swaps and rotates of A stack.
+While stack A is not sorted we will do this step as a cycle and then we will have gotten partly sorted stack B. Then we can return them back and sort stack A doing swaps and rotates of A stack.
 If amount of inegers is large enough the proccess of calculetion medianas and pushing to another stack in cycle can be repeated in stack B to optimize overall amount of operations.
