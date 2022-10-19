@@ -33,8 +33,8 @@ Program takes as parameters integers that will be sorted and print to stdout nam
 
 ## Compilation
 
-Makefile will compile binary using ```bash make``` command.
-There is ```bash make bonus``` rule to create checker that take as paremeters the same integers as push_swap got and does the same operations that it read from stdin.
+Makefile will compile binary using ```make``` command.
+There is ```make bonus``` rule to create checker that take as paremeters the same integers as push_swap got and does the same operations that it read from stdin.
 So it is needed redirect stdout of push_swap to stdin of checker using pipe ("|").
 
 ## Implementation
